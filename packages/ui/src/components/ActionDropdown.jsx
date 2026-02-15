@@ -1,3 +1,14 @@
+import {
+  IconBug,
+  IconCoffee,
+  IconColorPicker,
+  IconInfoCircle,
+  IconMapSearch,
+  IconPalette,
+  IconSettings,
+  IconShare,
+  IconSparkles,
+} from '@tabler/icons-react'
 import { AboutDialog } from '@ui/components/dialogs/AboutDialog.jsx'
 import { CustomPalettePickerDialog } from '@ui/components/dialogs/CustomPalettePickerDialog.jsx'
 import { PalettePickerDialog } from '@ui/components/dialogs/PalettePickerDialog.jsx'
@@ -34,27 +45,58 @@ export function ActionDropdown() {
 
         <DropdownMenuContent side="bottom" sideOffset={10} align="end" alignOffset={0}>
           <DropdownMenuGroup>
-            <DropdownMenuItem onClick={() => setShowAddLocation(true)}>
+            <DropdownMenuItem className="cursor-pointer" onClick={() => setShowAddLocation(true)}>
+              <IconMapSearch className="size-4 mr-2" stroke={1.5} />
               <span>Add a location</span>
             </DropdownMenuItem>
 
-            <DropdownMenuItem onClick={() => setShowPalettePicker(true)}>
+            <DropdownMenuItem className="cursor-pointer" onClick={() => setShowPalettePicker(true)}>
+              <IconPalette className="size-4 mr-2" stroke={1.5} />
               <span>Choose a palette</span>
             </DropdownMenuItem>
 
-            <DropdownMenuItem onClick={() => setShowCustomPalettePicker(true)}>
+            <DropdownMenuItem className="cursor-pointer" onClick={() => setShowCustomPalettePicker(true)}>
+              <IconColorPicker className="size-4 mr-2" stroke={1.5} />
               <span>Make your own palette</span>
             </DropdownMenuItem>
 
-            <DropdownMenuItem onClick={() => setShowSettings(true)}>
+            <DropdownMenuItem className="cursor-pointer" onClick={() => setShowSettings(true)}>
+              <IconSettings className="size-4 mr-2" stroke={1.5} />
               <span>Settings</span>
             </DropdownMenuItem>
 
-            <DropdownMenuItem onClick={() => setShowShare(true)}>
+            <DropdownMenuSeparator />
+
+            <DropdownMenuItem
+              className="cursor-pointer"
+              onClick={() => window.open('https://github.com/fvitas/epiczeit/issues/new')}>
+              <IconSparkles className="size-4 mr-2" stroke={1.5} />
+              <span>Request a feature</span>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem
+              className="cursor-pointer"
+              onClick={() => window.open('https://github.com/fvitas/epiczeit/issues/new')}>
+              <IconBug className="size-4 mr-2" stroke={1.5} />
+              <span>Report a bug</span>
+            </DropdownMenuItem>
+
+            <DropdownMenuSeparator />
+
+            <DropdownMenuItem className="cursor-pointer" onClick={() => setShowShare(true)}>
+              <IconShare className="size-4 mr-2" stroke={1.5} />
               <span>Share</span>
             </DropdownMenuItem>
 
-            <DropdownMenuItem onClick={() => setShowAbout(true)}>
+            <DropdownMenuItem className="cursor-pointer" onClick={() => window.open('https://ko-fi.com/filipvitas')}>
+              <IconCoffee className="size-4 mr-2" stroke={1.5} />
+              <span>Buy me a coffee / Donate</span>
+            </DropdownMenuItem>
+
+            <DropdownMenuSeparator />
+
+            <DropdownMenuItem className="cursor-pointer" onClick={() => setShowAbout(true)}>
+              <IconInfoCircle className="size-4 mr-2" stroke={1.5} />
               <span>About</span>
             </DropdownMenuItem>
           </DropdownMenuGroup>
